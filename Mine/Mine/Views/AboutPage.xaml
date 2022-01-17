@@ -36,7 +36,7 @@
             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
                 <Label Text="CPSC 5250 WQ22"></Label>
                 <Label Text="Wyatt Merians"></Label>
-                <Label Text="1/9/2022 - 11:46am"></Label>
+                <Label Text="1/17/2022 - 1:38pm"></Label>
             </StackLayout>
         </ScrollView>
     </Grid>
