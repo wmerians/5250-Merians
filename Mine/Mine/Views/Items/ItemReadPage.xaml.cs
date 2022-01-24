@@ -36,9 +36,25 @@ namespace Mine.Views
             BindingContext = viewModel;
         }
 
+        /// <summary>
+        /// Open the delete page for this item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public async void DeleteItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new ItemDeletePage(viewModel)));
+            await Navigation.PopAsync();
+        }
+
+        /// <summary>
+        /// Open the update page for this item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void UpdateItem_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new ItemUpdatePage(viewModel)));
             await Navigation.PopAsync();
         }
     }
