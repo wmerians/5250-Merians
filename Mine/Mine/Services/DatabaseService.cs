@@ -58,6 +58,11 @@ namespace Mine.Services
             return true;
         }
 
+        /// <summary>
+        /// Update method for database
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateAsync(ItemModel item)
         {
             if (item == null)
@@ -74,9 +79,27 @@ namespace Mine.Services
             return true;
         }
 
-        public Task<bool> DeleteAsync(string id)
+        /// <summary>
+        /// Delete method for database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<bool> DeleteAsync(string id)
         {
-            throw new NotImplementedException();
+            var data = await ReadAsync(id);
+            if (data == null)
+            {
+                return false;
+            }
+
+            var result = await Database.DeleteAsync(data);
+
+            if (result == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         /// <summary>
